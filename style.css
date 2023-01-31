@@ -1,0 +1,233 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+:root {
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --active-btn: linear-gradient( 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --main-btn: linear-gradient( 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 12% auto 1fr;
+    min-height: 100%;
+    background: url("./images/bg-pattern-desktop.svg"), var(--active-btn);
+    background-size: cover;
+}
+
+.logo-section {
+    width: 100%;
+    height: 1.4rem;
+    place-self: center;
+    padding-left: 2rem;
+}
+
+.logo {
+    background: url("./images/logo.svg") no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.hero {
+    width: 100%;
+    grid-row-start: 2;
+}
+
+.hero > img {
+    width: 100%;
+}
+
+.desktop{
+    display: none;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 4rem 1.8rem;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    font-weight: 600;
+    letter-spacing: 8px;
+    color: var(--Dark-Grayish-Red);
+}
+
+.title > :first-child {
+    font-weight: 300;
+    color: var(--Desaturated-Red);
+}
+
+.description {
+    color: var(--Desaturated-Red);
+}
+
+.form { 
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#email {
+    background: none;
+    border-radius: 2rem;
+    border: 1px solid var(--Desaturated-Red);
+    color: var(--Dark-Grayish-Red);
+    opacity: .5;
+    width: 100%;
+    padding: .9rem 1.5rem;
+}
+
+
+.exclamation {  
+    display: none;
+    position: absolute;
+    top: 30%;
+    right: 6rem;
+}
+
+.error-message {
+    display: none;
+    position: absolute;
+    transform: translateY(50%);
+    left: 8%;
+}
+
+.submit {
+    position: absolute;
+    right: 0;
+    border: none;
+    border-radius: 1.5rem;
+    background: var(--main-btn);
+    padding: 1.2rem 1.8rem;
+}
+
+.submit > img {
+    width: .7rem;
+}
+
+.submit:hover{
+    background: linear-gradient( 135deg, hsl(0, 90%, 89%), hsl(0, 71%, 84%));
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+
+@media (min-width: 950px){
+
+    main {
+        grid-template-rows:initial;
+        grid-template-columns: 60% 1fr;
+        position: relative;
+        font-size: 1rem;
+    }
+
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background: url("./images/hero-desktop.jpg") no-repeat center;
+        background-size: cover;
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row: span 2;
+    }
+
+    .logo-section {
+        position: absolute;
+        padding-left: 10rem;
+        top: 8%;
+        left: 0;
+    }
+
+    .logo {
+        height: 2rem;
+    }
+
+    .main-section {
+        text-align: start;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-top: 12rem;
+        padding-left: 10rem;
+        padding-right: 15rem;
+    }
+
+    .title {
+        font-size: 3.7rem;
+    }
+
+    #email {
+        padding: .7rem 1.7rem;
+    }
+
+    .submit {
+        padding: 1rem 2.2rem;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop{
+        display: none;
+    }
+}
+
+@media (min-width: 951px) and (max-width: 1171px){
+    .logo-section {
+        padding-left: 13%;
+    }
+}
